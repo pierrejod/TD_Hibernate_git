@@ -17,6 +17,7 @@ public class ClientService implements Serializable {
 		
 		session.save(c); //INSERT INTO client(nom,prenom) VALUES (c.getNom(),c.getPrenom())
 
+		session.getTransaction().commit();
 		HibernateUtil.shutdown();
 		
 		return true;

@@ -9,7 +9,7 @@
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/td_hibernate_git?serverTimezone=UTC</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-        
+        <mapping class="com.Model.Produit"/>
         <mapping class="com.Model.Client"/>
     </session-factory>
 </hibernate-configuration>
