@@ -34,7 +34,7 @@ public class Client implements Serializable {
 	@JoinColumn(name="client_id")
 	private Set<Produit> produits;
 
-	public Client(int id, String nom, String prenom) {
+	public Client() {
 		super();
 	}
 

@@ -3,6 +3,8 @@ package com.TD_Hibernate_git;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.hibernate.Session;
+
 import com.Model.Client;
 import com.Model.Produit;
 import com.Service.ClientService;
@@ -11,6 +13,8 @@ public class Principale {
 
 	public static void main(String[] args) {
 		
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		session.beginTransaction();
 		
 		ClientService cs = new ClientService();
 		
@@ -24,7 +28,10 @@ public class Principale {
 		listeP.add(p2);
 		
 		c1.setProduits(listeP);
-		cs.create(c1);
+		cs.delete(c1,session);
+		
+		session.getTransaction().commit();
+		HibernateUtil.shutdown();
 	
 	}
 
