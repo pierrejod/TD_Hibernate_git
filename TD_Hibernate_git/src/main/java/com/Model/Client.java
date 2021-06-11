@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -33,6 +34,14 @@ public class Client implements Serializable {
 	@OneToMany(cascade=CascadeType.ALL)
 	@JoinColumn(name="client_id")
 	private Set<Produit> produits;
+	
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name="client_id")
+	private Set<Commande> commandes;
+	
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="compte_id")
+	private Compte compte;
 
 	public Client() {
 		super();
@@ -76,6 +85,22 @@ public class Client implements Serializable {
 		this.produits = produits;
 	}
 
-		
+	public Set<Commande> getCommandes() {
+		return commandes;
+	}
+
+	public void setCommandes(Set<Commande> commandes) {
+		this.commandes = commandes;
+	}
+
+	public Compte getCompte() {
+		return compte;
+	}
+
+	public void setCompte(Compte compte) {
+		this.compte = compte;
+	}
+	
+	
 
 }
