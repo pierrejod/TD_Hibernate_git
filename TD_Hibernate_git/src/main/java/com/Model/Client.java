@@ -33,6 +33,10 @@ public class Client implements Serializable {
 	@OneToMany(cascade=CascadeType.ALL)
 	@JoinColumn(name="client_id")
 	private Set<Produit> produits;
+	
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name="client_id")
+	private Set<Commande> commandes;
 
 	public Client() {
 		super();
@@ -76,6 +80,14 @@ public class Client implements Serializable {
 		this.produits = produits;
 	}
 
-		
+	public Set<Commande> getCommandes() {
+		return commandes;
+	}
+
+	public void setCommandes(Set<Commande> commandes) {
+		this.commandes = commandes;
+	}
+
+	
 
 }

@@ -11,5 +11,6 @@
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <mapping class="com.Model.Produit"/>
         <mapping class="com.Model.Client"/>
+        <mapping class="com.Model.Commande"/>
     </session-factory>
 </hibernate-configuration>

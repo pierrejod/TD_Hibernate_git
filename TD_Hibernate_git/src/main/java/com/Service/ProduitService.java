@@ -14,9 +14,6 @@ public class ProduitService implements Serializable {
 	public boolean create(Produit c,Session s) 
 	{
 		s.save(c); //INSERT INTO Produit(nom,prenom) VALUES (c.getNom(),c.getPrenom())
-
-		s.getTransaction().commit();
-		HibernateUtil.shutdown();
 		
 		return true;
 	}
