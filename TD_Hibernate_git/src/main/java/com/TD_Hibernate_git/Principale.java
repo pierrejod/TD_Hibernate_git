@@ -36,16 +36,26 @@ public class Principale {
 		//cs.update(session, 2);
 		ps.update(session, 2);
 		
-		Client c2 = cs.findById(session, 2);
+		//Client c2 = cs.findById(session, 2);
 		
-		System.out.println("Nom :"+ c2.getNom() +" Prenom : "+ c2.getPrenom() +" Vos produits : "+c2.getProduits().toString());
+		//System.out.println("Nom :"+ c2.getNom() +" Prenom : "+ c2.getPrenom() +" Vos produits : "+c2.getProduits().toString());
 		
 		
-		List<Client>listeC = cs.findAll(session);
+		//List<Client>listeC = cs.findAll(session);
 		
-		for(Client cli : listeC) 
+		//for(Client cli : listeC) 
+		//{
+			//System.out.println("Nom :"+ cli.getNom() +" Prenom : "+ cli.getPrenom());
+		//}
+		
+		Produit prod1= ps.findById(session, 1);
+		System.out.println("Ref :"+ prod1.getReference() +" Prix: "+ prod1.getPrix()+" € ");
+		
+		List<Produit> listeprod = ps.findAll(session);
+		
+		for(Produit pro : listeprod) 
 		{
-			System.out.println("Nom :"+ cli.getNom() +" Prenom : "+ cli.getPrenom());
+			System.out.println("Ref :"+ pro.getReference() +" Prix: "+ pro.getPrix()+" € ");
 		}
 		
 		session.getTransaction().commit();
