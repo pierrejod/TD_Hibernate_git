@@ -12,5 +12,6 @@
         <mapping class="com.Model.Produit"/>
         <mapping class="com.Model.Client"/>
         <mapping class="com.Model.Commande"/>
+        <mapping class="com.Model.Compte"/>
     </session-factory>
 </hibernate-configuration>
