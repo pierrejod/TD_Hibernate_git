@@ -18,7 +18,7 @@ public class Compte {
 	@Column(name="id", nullable = false, unique =true)
 	private int id;
 	
-	@Column(name="email", nullable = true, unique=false, length=50)
+	@Column(name="email", nullable = true, unique=false, length=150)
 	private String email;
 	
 	@Column(name="mdp", nullable = true, unique=false, length=50)

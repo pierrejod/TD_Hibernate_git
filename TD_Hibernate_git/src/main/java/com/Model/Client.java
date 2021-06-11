@@ -93,6 +93,14 @@ public class Client implements Serializable {
 		this.commandes = commandes;
 	}
 
+	public Compte getCompte() {
+		return compte;
+	}
+
+	public void setCompte(Compte compte) {
+		this.compte = compte;
+	}
+	
 	
 
 }

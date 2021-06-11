@@ -8,6 +8,7 @@ import org.hibernate.Session;
 
 import com.Model.Client;
 import com.Model.Commande;
+import com.Model.Compte;
 import com.Model.Produit;
 import com.Service.ClientService;
 import com.Service.CommandeService;
@@ -40,10 +41,10 @@ public class Principale {
 		c1.setCommandes(listecom);
 		
 		c1.setProduits(listeP);
-		cs.create(c1,session);
+		//cs.create(c1,session);
 		
 		//cs.update(session, 2);
-		ps.update(session, 2);
+		//ps.update(session, 2);
 		
 		//Client c2 = cs.findById(session, 2);
 		
@@ -73,6 +74,14 @@ public class Principale {
 		{
 			System.out.println("Nom Commande :"+ com.getNom_commande() +" Numéro de commande: "+com.getReference());
 		}
+		
+		Compte cpt1 = new Compte("test@test.com","test");
+		Client c2 = new Client("Sophie","Marie");
+		session.saveOrUpdate(cpt1);
+		c2.setCompte(cpt1);
+		session.saveOrUpdate(c2);
+		
+		
 		
 		session.getTransaction().commit();
 		HibernateUtil.shutdown();
