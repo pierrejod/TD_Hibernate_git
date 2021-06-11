@@ -22,19 +22,20 @@ public class ClientService implements Serializable {
 		return true;
 	}
 	
-	public void delete(Client c,Session s,int id) 
+	public void delete(Session s,int id) 
 	{
 		
-		c = s.get(Client.class, id);
+		Client c = s.get(Client.class, id);
 		
 		s.delete(c);
 
 	}
 	
-	public void update(Client c,Session s,int id) 
+	public void update(Session s,int id) 
 	{
 		
-		c = s.get(Client.class, id);
+		Client c = s.get(Client.class, id);
+		c.setPrenom("Paul");
 		s.update(c); // UPDATE client SET nom = c.getNom(), prenom= c.getPrenom() where id =id;
 
 	}
@@ -48,7 +49,7 @@ public class ClientService implements Serializable {
 	
 	public List<Client> findAll(Session s) 
 	{
-		Query q = s.createQuery("from client");
+		Query q = s.createQuery("from Client");
 		List<Client> listeC  = q.list(); //SELECT * FROM client where id = id;
 		return listeC;
 	}
