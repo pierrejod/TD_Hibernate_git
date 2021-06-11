@@ -34,6 +34,7 @@ public class Principale {
 		//cs.delete(session,3);
 		
 		//cs.update(session, 2);
+		ps.update(session, 2);
 		
 		Client c2 = cs.findById(session, 2);
 		
